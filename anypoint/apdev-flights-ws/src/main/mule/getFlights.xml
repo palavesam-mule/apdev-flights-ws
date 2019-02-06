@@ -38,7 +38,7 @@ payload map ( payload01 , indexOfPayload01 ) -> {
 	</flow>
 	<flow name="getUnitedFlights" doc:id="38f4a1a7-de03-4be3-8099-876882093afa" >
 		<http:listener doc:name="unitedFlights" doc:id="67d4a9b4-5061-49ee-8b8c-e19b42e50564" config-ref="HTTP_Listener_config" path="/united"/>
-		<flow-ref doc:name="Flow Reference" doc:id="377644f7-3de8-4d2b-819e-c046a691241c" name="setCodeSub_Flow"/>
+		<flow-ref doc:name="CallSetCodeSubFlow" doc:id="377644f7-3de8-4d2b-819e-c046a691241c" name="setCodeSub_Flow"/>
 		<http:request method="GET" doc:name="getFlights" doc:id="acb93b4c-d655-4f5c-a0d6-f8d92cc58ced" config-ref="HTTP_UnitedWS_Request_configuration" path="/united/flights/{dest}">
 			<http:uri-params ><![CDATA[#[output application/java
 ---
