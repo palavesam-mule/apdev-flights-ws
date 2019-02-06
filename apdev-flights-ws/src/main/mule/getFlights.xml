@@ -12,7 +12,7 @@ http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/
 	</sub-flow>
 	
 	<flow name="getAmericanFlights" doc:id="a09fbe0d-bd65-479a-9992-2440f87491c3" >
-		<http:listener doc:name="GET flights" doc:id="f055dca2-cf43-4c8b-bbdc-89af08d9278e" config-ref="HTTP_Listener_config" path="/american" allowedMethods="GET"/>
+		<http:listener doc:name="GET Flights" doc:id="f055dca2-cf43-4c8b-bbdc-89af08d9278e" config-ref="HTTP_Listener_config" path="/american" allowedMethods="GET"/>
 		<american-flights:get-flights doc:name="Get Flights" doc:id="5264ec53-f0e6-4d0b-8ade-efaee3f88cf3" config-ref="American_Flights_Config1" destination="#[attributes.queryParams.code default 'SFO']"/>
 		<ee:transform doc:name="JSON to [Flights]" doc:id="7b633a8b-692c-46ff-965e-28d67eb99338">
 			<ee:message>
