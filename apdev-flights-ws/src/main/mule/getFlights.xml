@@ -21,7 +21,7 @@ output application/java
 ---
 payload map ( payload01 , indexOfPayload01 ) -> {
 	airlineName: "American",
-	availableSeats: payload01.emptySeats,
+	availableSeats: payload01.emptySeats ,
 	departureDate: payload01.departureDate,
 	destination: payload01.destination,
 	flightCode: payload01.code,
