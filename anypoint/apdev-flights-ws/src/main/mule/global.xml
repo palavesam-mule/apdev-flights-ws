@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc"
+	xmlns:american-flights="http://www.mulesoft.org/schema/mule/american-flights" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/american-flights http://www.mulesoft.org/schema/mule/american-flights/current/mule-american-flights.xsd
+http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd">
+
+	<global-property doc:name="Global Property" doc:id="8e1cb93f-0a78-4022-83ef-dce6208f7b47" name="env" value="dev" />
+	<configuration-properties doc:name="Configuration properties" doc:id="1085b878-d43f-4967-9c9a-d1445baea056" file="${env}_config.yaml" />
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="213942d7-72dc-4e10-bce7-91029c66acc1" >
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
+	</http:listener-config>
+	<american-flights:config name="American_Flights_Config1" doc:name="American Flights Config" doc:id="24e027d9-20f9-4306-93bf-8f84e8c4da72" property_host="${american.host}" property_port="${american.port}" property_protocol="${american.protocol}" property_basePath="${american.basepath}" />
+	<http:request-config name="HTTP_UnitedWS_Request_configuration" doc:name="HTTP Request configuration" doc:id="77ab0870-ea82-4bc8-baea-7ebf5e2e02d6" basePath="${training.basepath}">
+		<http:request-connection host="${training.host}" port="${training.port}" />
+	</http:request-config>
+	<wsc:config name="Web_Service_Consumer_Config" doc:name="Web Service Consumer Config" doc:id="1fbdab0a-72ab-4e3a-92be-35d74e27fb85" >
+		<wsc:connection wsdlLocation="${delta.wsdl}" service="${delta.service}" port="${delta.port}" />
+	</wsc:config>
+</mule>

@@ -1,0 +1,24 @@
+http:
+  port: "8081"
+  
+american:
+  host: "training4-american-ws-subbaiah-proxy.us-e2.cloudhub.io"
+  port: "80"
+  basepath: "/"
+  protocol: "HTTP" 
+
+accounts:
+  host: "training4-accounts-ws-subbaiah.us-e2.cloudhub.io"
+  port: "80"
+  basepath: "/api"
+  protocol: "HTTP"   
+training:
+  host: "mu.learn.mulesoft.com"
+  port: "80"
+  basepath: "/"
+  protocol: "HTTP"
+delta:
+  wsdl: "http://mu.learn.mulesoft.com/delta?wsdl"
+  service: "TicketServiceService"
+  port: "TicketServicePort"
+  
