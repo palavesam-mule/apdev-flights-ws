@@ -67,7 +67,7 @@ payload.flights map ( flight , indexOfFlight ) -> {
 	</flow>
 	<flow name="getDeltaFlightsFlow" doc:id="4f1e9a33-75e6-483e-ba66-c9e05c768f1f" >
 		<http:listener doc:name="GET Delta" doc:id="dc339564-e0fa-4608-92d1-0d15cd820937" config-ref="HTTP_Listener_config" path="/delta"/>
-		<flow-ref doc:name="Flow Reference" doc:id="ee4fe3e7-5e7a-4ab3-8d8a-a02ce0108adf" name="setCodeSub_Flow"/>
+		<flow-ref doc:name="InvokeSetCodeSub_Flow" doc:id="ee4fe3e7-5e7a-4ab3-8d8a-a02ce0108adf" name="setCodeSub_Flow"/>
 		<ee:transform doc:name="Transform Message" doc:id="2d992fd8-5a8a-4582-ba36-43b8160c17e4" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
