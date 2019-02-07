@@ -125,6 +125,6 @@ output application/java
 flatten(payload..payload) ]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-		<logger level="INFO" doc:name="Logger" doc:id="68c54c75-a988-4151-b9a6-965bc8af5b16" />
+		<logger level="INFO" doc:name="Logger1" doc:id="68c54c75-a988-4151-b9a6-965bc8af5b16" />
 	</flow>
 </mule>
