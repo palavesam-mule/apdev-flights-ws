@@ -33,7 +33,7 @@ payload map ( payload01 , indexOfPayload01 ) -> {
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-		<logger level="INFO" doc:name="Logger" doc:id="71b044c1-7263-45c4-9811-74444d61d9ee" message="#[payload]"/>
+		<logger level="INFO" doc:name="Logger1" doc:id="71b044c1-7263-45c4-9811-74444d61d9ee" message="#[payload]"/>
 		
 	</flow>
 	<flow name="getUnitedFlights" doc:id="38f4a1a7-de03-4be3-8099-876882093afa" >
