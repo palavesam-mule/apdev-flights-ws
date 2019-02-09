@@ -8,8 +8,7 @@
     <packaging>mule-application</packaging>
 
 	<name>apdev-flights-ws</name>
-
-    <properties>
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -25,7 +24,18 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-				</configuration>
+			        <cloudHubDeployment>
+			            <uri>https://anypoint.mulesoft.com</uri>
+			            <muleVersion>${mule.version}</muleVersion>
+			            <username>${username}</username>
+			            <password>${password}</password>
+			            <applicationName>${cloudhub.application.name}</applicationName>
+			            <environment>${environment}</environment>
+			            <properties>
+			                <key>value</key>
+			            </properties>
+			        </cloudHubDeployment>
+			    </configuration>
 			</plugin>
 		</plugins>
 	</build>
